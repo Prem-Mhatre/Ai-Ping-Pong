@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+.heading{
+    width: 100%;
+    margin: 0;
+    box-shadow: 20px 20px 20px #00315c !important;
+    background: linear-gradient(90deg, #337ab7, #87beee, #337ab7) !important;
+    border: none !important;
+    text-align: left;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.heading h3{
+    display: inline;
+    font-size: 30px;
+    font-family: roboto;
+    font-weight: bolder;
+}
+.heading #instructions{
+    background: transparent;
+    font-size: 20px;
+    float: right;
+    border: none;
+    font-family: cursive;
+}
+.heading #instructions:active{
+    color: rgb(218, 218, 218);
+}
+#start_button, #restart_button{
+    font-size: 20px;
+}
+#status{
+    font-size: 30px;
+}
+.cc_footer{
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background: linear-gradient(90deg, #87beee, #1a65a7, #87beee) !important;
+    color: white;
+    font-family: cursive;
+    box-shadow: -15px -15px 25px #00315c !important;
+}
