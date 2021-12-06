@@ -23,6 +23,8 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
+
+  canvas.parent("canvas");
 }
 
 
@@ -161,8 +163,4 @@ function paddleInCanvas(){
   if(mouseY < 0){
     mouseY =0;
   }  
-}
-
-function restartGame(){
-  window.location.reload();
 }

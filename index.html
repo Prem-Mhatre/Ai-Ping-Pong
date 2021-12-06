@@ -23,14 +23,38 @@
             <br><br><br><br>
             <div class="btn btn-info" id="start_button" onclick="startGame()">Play</div>
             <br><br>
-            <div class="btn btn-info" id="restart_button" onclick="restartGame()">Restart</div>
+            <div class="btn btn-info" id="restart_button" onclick="reset()">Reset</div>
             <br><br>
             <div class="btn btn-warning" id="status"></div>
             <br><br>
             <div id="canvas"></div>
             <br><br>
+
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Instructions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h3>1. Move your mouse up and down to move red paddle. <br>
+                                2. If you dutch the ball the Computer is going to score the point. <br>
+                                3. If Computer dutch the ball your going to score the point. <br>
+                                4. If you and Computer continuously hitting the ball the speed of the ball is going to increse.
+                            </h3>
+                            <br><br>
+                            <h1 class="text-primary">--ALL THE BEST--</h1>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </center>
-        <div class="cc_footer">Developed By - Prem Mhatre</div>
+        <div class="cc_footer">Developed By - Prem Mhatre || Source Code : <a href="https://github.com/linuk" target="_blank">Linuk</a></div>
         <script src="main.js"></script>
     </body>
 </html>
