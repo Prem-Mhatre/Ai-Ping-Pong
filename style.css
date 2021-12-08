@@ -34,10 +34,12 @@
     font-size: 30px;
 }
 #canvas{
-    margin-bottom: 20px;
     border: 4px solid #1a65a7;
     width: 709px;
     height: 608px;
+}
+#gameconsole{
+    margin-bottom: 20px;
 }
 .modal-dialog{
     width: 70%;
