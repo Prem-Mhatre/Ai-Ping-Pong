@@ -1,5 +1,8 @@
-
-
+rightWristY = 0;
+rightWristX = 0;
+scoreRightWrist = 0;
+missed_sound = "";
+ball_t_paddel = "";
 
 var paddle2 =10,paddle1=10;
 
@@ -7,7 +10,7 @@ var paddle1X = 10,paddle1Height = 110;
 var paddle2Y = 685,paddle2Height = 70;
 
 var score1 = 0, score2 =0;
-var paddle1Y;
+var paddle1Y = rightWristY;
 
 var  playerscore =0;
 
@@ -21,13 +24,16 @@ var ball = {
     dy:3
 }
 
-rightWristY = 0;
-rightWristX = 0;
-scoreRightWrist = 0;
+
 
 //Define a variable to hold the status of the game
 gameStatus = "";
 
+
+function preload(){
+  missed_sound = loadSound("missed.wav");
+  ball_t_paddel = loadSound("ball_touch_paddel.wav");
+}
  
 
 function setup(){
@@ -67,7 +73,7 @@ function startGame()
 }
 
 function draw(){
-if(gameStatus){
+if(gameStatus == true){
   console.log("game started");
 } // inside the if condition check if the game_status is equal to the value "start".
 {
@@ -82,7 +88,7 @@ if(gameStatus){
   stroke("black");
   rect(0,0,20,700);
 
-  if(scoreRightWrist > 0.2)
+  if(scoreRightWrist > 0.1)
   {
     fill("red");
     stroke("red");
@@ -171,13 +177,14 @@ function move(){
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
-    
+    ball_t_paddel.play();
   }
   else{
     pcscore++;
     
     reset();
     navigator.vibrate(100);
+    missed_sound.play();
   }
 }
 if(pcscore ==4){
@@ -188,7 +195,7 @@ if(pcscore ==4){
     stroke("white");
     textSize(25);
     text("Game Over!",width/2,height/2);
-    text("Reload the page!",width/2,height/2+30)
+    text("Click Restart Button To Restart The Game!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
  }
@@ -221,3 +228,8 @@ function paddleInCanvas(){
   
 }
 
+function restart(){
+  pcscore = 0;
+  playerscore = 0;
+  loop();
+}
